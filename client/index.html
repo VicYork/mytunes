@@ -21,11 +21,12 @@
 
     <script>
       $(function(){
-        // set up model objects
+        // Set up model objects. the Songs object is a collection of songData with SongModel being the model for each song? Songs is the library?
         var library = new Songs(songData);
+        // Library is a property of the app.
         var app = new AppModel({library: library});
 
-        // build a view for the top level of the whole app
+        // Builds a view for the top level of the whole app.
         var appView = new AppView({model: app});
 
         // put the view onto the screen

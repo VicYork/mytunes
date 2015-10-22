@@ -18,7 +18,7 @@ describe('PlayerView', function() {
         url: "mp3s/A Third Song.mp3",
         title: "The Third Song",
         artist: "Aaliyah"
-      },
+      }
     ]);
     // playerView is created in AppView initialize
     // access with appView.playerView
@@ -32,7 +32,7 @@ describe('PlayerView', function() {
   });
 
   describe('Song transitions', function() {
-    xit('dequeues a song when finished playing & plays the next song', function(){
+    it('dequeues a song when finished playing & plays the next song', function(){
       var firstSong = library.at(0)
         , secondSong = library.at(1)
         , thirdSong = library.at(2)

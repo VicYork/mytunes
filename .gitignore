@@ -5,6 +5,8 @@
 .LSOverride
 Icon
 
+# idea settings
+.idea/
 
 # Thumbnails
 ._*
