@@ -41,6 +41,10 @@ describe('PlayerView', function() {
       songQueue.add(firstSong);
       songQueue.add(secondSong);
       songQueue.add(thirdSong);
+      console.log("Should be: ");
+      console.log(firstSong);
+      console.log("But it's: ");
+      console.log(appView.playerView.model);
       // play the first song
       songQueue.playFirst();
       expect(appView.playerView.model).to.equal(firstSong);

@@ -16,23 +16,30 @@ var AppModel = Backbone.Model.extend({
       this.set('currentSong', song);
     }, this);
 
-    // one idea
-    //this.set("songQueue", )
-
-    // another idea works?
-    //params.library.on('enqueue', function(song) {
-    //  this.set('songQueue', song);
-    //});
-
-
-    // one more idea
     params.library.on('enqueue', function (song) {
       this.get('songQueue').add(song);
     }, this);
 
-    // yet another idea
-    //if ("enqueue"){}
+    params.library.on('dequeue', function (song) {
+      this.get('songQueue').remove(song);
+    });
+
+
+    params.library.on('ended', function (song) {
+      console.log("ended again");
+      //this.get('songQueue').remove(song);
+      //this.get('songQueue').at(0).set('currentSong');
+
+      this.set('currentSong', this.get('songQueue').at(0));
+      // console.log("song ended");
+      // this.get('songQueue')., function(song){
+      // });
+    }, this);
+
+
+    //params.library.on('dequeue', function(song) {
+    //  this.get('songQueue').remove(song);
+    //});
 
   }
-
 });
